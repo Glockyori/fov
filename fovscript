@@ -1,0 +1,182 @@
+-- made by glockyori
+-- glock#2227
+
+local localp = game.Players.LocalPlayer
+
+local FovUI = Instance.new("ScreenGui")
+local Background = Instance.new("Frame")
+local Label = Instance.new("TextLabel")
+local F120 = Instance.new("TextButton")
+local F100 = Instance.new("TextButton")
+local F60 = Instance.new("TextButton")
+local F40 = Instance.new("TextButton")
+local FCustom = Instance.new("TextBox")
+local cord = Instance.new("TextLabel")
+local F70 = Instance.new("TextButton")
+local n = Instance.new("TextLabel")
+local UiCorner1 = Instance.new("UICorner")
+local UiCorner2 = Instance.new("UICorner")
+local Done = Instance.new("TextButton")
+
+--Properties:
+
+FovUI.Name = "FovUI"
+FovUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+FovUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Background.Name = "Background"
+Background.Parent = FovUI
+Background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Background.Position = UDim2.new(0.53678304, 0, 0.224970579, 0)
+Background.Size = UDim2.new(0.14401494, 0, 0.38751471, 0)
+Background.Draggable = true
+Background.Active = true
+UiCorner1.Parent = Background
+
+Label.Name = "Label"
+Label.Parent = Background
+Label.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+Label.Size = UDim2.new(1, 0, 0.0759877637, 0)
+Label.Font = Enum.Font.Roboto
+Label.Text = "Fov Changer"
+Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+Label.TextScaled = true
+Label.TextSize = 14.000
+Label.TextWrapped = true
+UiCorner2.Parent = Label
+
+F120.Name = "F120"
+F120.Parent = Background
+F120.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+F120.BorderSizePixel = 0
+F120.Position = UDim2.new(0, 0, 0.118541032, 0)
+F120.Size = UDim2.new(1, 0, 0.0759999976, 0)
+F120.Font = Enum.Font.Roboto
+F120.Text = "Fov 120"
+F120.TextColor3 = Color3.fromRGB(255, 255, 255)
+F120.TextScaled = true
+F120.TextSize = 14.000
+F120.TextWrapped = true
+F120.MouseButton1Down:Connect(function()
+	game.Workspace.Camera.FieldOfView = 120
+end)
+
+F100.Name = "F100"
+F100.Parent = Background
+F100.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+F100.BorderSizePixel = 0
+F100.Position = UDim2.new(0, 0, 0.215805471, 0)
+F100.Size = UDim2.new(1, 0, 0.0759999976, 0)
+F100.Font = Enum.Font.Roboto
+F100.Text = "Fov 100"
+F100.TextColor3 = Color3.fromRGB(255, 255, 255)
+F100.TextScaled = true
+F100.TextSize = 14.000
+F100.TextWrapped = true
+F100.MouseButton1Down:Connect(function()
+	game.Workspace.Camera.FieldOfView = 100
+end)
+
+F60.Name = "F60"
+F60.Parent = Background
+F60.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+F60.BorderSizePixel = 0
+F60.Position = UDim2.new(0, 0, 0.458966553, 0)
+F60.Size = UDim2.new(1, 0, 0.0759999976, 0)
+F60.Font = Enum.Font.Roboto
+F60.Text = "Fov 60"
+F60.TextColor3 = Color3.fromRGB(255, 255, 255)
+F60.TextScaled = true
+F60.TextSize = 14.000
+F60.TextWrapped = true
+F60.MouseButton1Down:Connect(function()
+	game.Workspace.Camera.FieldOfView = 60
+end)
+
+F40.Name = "F40"
+F40.Parent = Background
+F40.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+F40.BorderSizePixel = 0
+F40.Position = UDim2.new(0, 0, 0.556230962, 0)
+F40.Size = UDim2.new(1, 0, 0.0759999976, 0)
+F40.Font = Enum.Font.Roboto
+F40.Text = "Fov 40"
+F40.TextColor3 = Color3.fromRGB(255, 255, 255)
+F40.TextScaled = true
+F40.TextSize = 14.000
+F40.TextWrapped = true
+F40.MouseButton1Down:Connect(function()
+	game.Workspace.Camera.FieldOfView = 40
+end)
+
+FCustom.Name = "FCustom"
+FCustom.Parent = Background
+FCustom.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+FCustom.BorderSizePixel = 0
+FCustom.Position = UDim2.new(0, 0, 0.668693006, 0)
+FCustom.Size = UDim2.new(1, 0, 0.0759999976, 0)
+FCustom.Font = Enum.Font.Roboto
+FCustom.PlaceholderText = "Custom FOV"
+FCustom.Text = ""
+FCustom.TextColor3 = Color3.fromRGB(255, 255, 255)
+FCustom.TextScaled = true
+FCustom.TextSize = 14.000
+FCustom.TextWrapped = true
+
+Done.Name = "Done"
+Done.Parent = Background
+Done.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+Done.BorderSizePixel = 0
+Done.Position = UDim2.new(0.327328295, 0, 0.765295863, 0)
+Done.Size = UDim2.new(0.349707752, 0, 0.0759999976, 0)
+Done.Font = Enum.Font.Roboto
+Done.Text = "Done"
+Done.TextColor3 = Color3.fromRGB(255, 255, 255)
+Done.TextScaled = true
+Done.TextSize = 14.000
+Done.TextWrapped = true
+Done.MouseButton1Down:Connect(function()
+	game.Workspace.Camera.FieldOfView = FCustom.Text
+end)
+
+cord.Name = "cord"
+cord.Parent = Background
+cord.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+cord.BackgroundTransparency = 1.000
+cord.Position = UDim2.new(0, 0, 0.924012184, 0)
+cord.Size = UDim2.new(1, 0, 0.0759877637, 0)
+cord.Font = Enum.Font.Roboto
+cord.Text = "by glock#2227"
+cord.TextColor3 = Color3.fromRGB(255, 255, 255)
+cord.TextScaled = true
+cord.TextSize = 14.000
+cord.TextWrapped = true
+
+F70.Name = "F70"
+F70.Parent = Background
+F70.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+F70.BorderSizePixel = 0
+F70.Position = UDim2.new(0, 0, 0.361702144, 0)
+F70.Size = UDim2.new(1, 0, 0.0759999976, 0)
+F70.Font = Enum.Font.Roboto
+F70.Text = "Fov 70"
+F70.TextColor3 = Color3.fromRGB(255, 255, 255)
+F70.TextScaled = true
+F70.TextSize = 14.000
+F70.TextWrapped = true
+F70.MouseButton1Down:Connect(function()
+	game.Workspace.Camera.FieldOfView = 70
+end)
+
+n.Name = "n"
+n.Parent = Background
+n.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+n.BackgroundTransparency = 1.000
+n.Position = UDim2.new(0, 0, 0.316109419, 0)
+n.Size = UDim2.new(1.00000012, 0, 0.0455926247, 0)
+n.Font = Enum.Font.Roboto
+n.Text = "*70 is the default FOV*"
+n.TextColor3 = Color3.fromRGB(255, 255, 255)
+n.TextScaled = true
+n.TextSize = 14.000
+n.TextWrapped = true
