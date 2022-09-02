@@ -23,6 +23,7 @@ local Done = Instance.new("TextButton")
 FovUI.Name = "FovUI"
 FovUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 FovUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+FovUI.ResetOnSpawn = true
 
 Background.Name = "Background"
 Background.Parent = FovUI
